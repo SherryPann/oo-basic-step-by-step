@@ -17,7 +17,7 @@ describe("Person", function(){
     });
     it('return the correct introduce',function(){
         var person = new Person('haha',11);
-        var introduce = person.introduce();
+        var introduce = person.basic_introduce();
         expect(introduce).to.equal("My name is haha. I am 11 years old.")
     })
 });
