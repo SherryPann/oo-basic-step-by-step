@@ -6,14 +6,18 @@ var sinonChai = require("sinon-chai");
 var expect = chai.expect;
 chai.use(sinonChai);
 
-describe("OO入门", function(){
-    it("写一个类-1", function(){
-        sinon.spy(console, 'log');
-
-        require("../../src/practice_1")
-        var result = _.flatten(console.log.args).join("\n");
-        var expect_string = '下面是部分学生的成绩详情\n沙龙逸\t语文124 数学148 英语137\n刘钰婷\t语文115 数学139 英语135\n韩林霖\t语文127 数学139 英语142\n平均成绩\t语文122 数学142 英语138';
-        
-        expect(expect_string).to.equal(result);
+describe("Person", function(){
+    var Person = require('../../src/practice_1.js');
+    var person = new Person('sherry',21);
+    it("accept name and age as parameters", function(){
+        var result = person.introduce();
+        var expect_string = 'My name is sherry. I am 21 years old.';
+        expect(person.name).to.equal('sherry');
+        expect(person.age).to.equal(21);
     });
+    it("return the correct introduce", function(){
+        var result = person.introduce();
+        expect('My name is sherry. I am 21 years old.').to.equal(result);
+    });
+
 });
