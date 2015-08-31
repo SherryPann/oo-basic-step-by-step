@@ -17,7 +17,7 @@ describe("Person", function(){
         expect(person.age).to.equal(11);
         expect(person.age).to.equal(11);
     });
-    it('return the correct introduce',function(){
+    it('should have a introduce method ,introuce a person with name and age',function(){
         var person = new Person('haha',11);
         var introduce = person.introduce();
         expect(introduce).to.equal("My name is haha. I am 11 years old.")
@@ -30,7 +30,7 @@ describe('student',function(){
         expect(student.name).to.equal('haha');
         expect(student.age).to.equal(11);
     });
-    it('return the correct introduce',function(){
+    it('overwrite person introduce ,introduce a student with name,age,class',function(){
         var klass = new Klass(2);
         var student = new Student('haha',11,klass);
         var introduce = student.introduce();
@@ -45,13 +45,13 @@ describe('Teacher',function(){
         expect(teacher.age).to.equal(11);
         expect(teacher.klass.number).to.equal(2);
     });
-    it('return the correct introduce',function(){
+    it('overwrite person introduce ,introduce a student with name,age,class',function(){
         var klass = new Klass(2);
         var teacher = new Teacher('kk',11,klass);
         var introduce = teacher.introduce();
         expect(introduce).to.equal("My name is kk. I am 11 years old. I am a Teacher. I teach Class 2.")
     })
-    it('return the correct introducewith',function(){
+    it('should have a introducewith function,introduce a teacher with a student',function(){
         var klass = new Klass(2);
         var teacher = new Teacher('kk',11,klass);
         var student = new Student('haha',11,klass);
