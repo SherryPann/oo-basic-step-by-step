@@ -3,6 +3,10 @@ function Person(name,age){
     this.age = age;
 }
 
+Person.prototype.introduce = function(){
+    return "My name is "+this.name +". I am "+this.age+" years old.";
+}
+
 function Student(name,age,klass){
     Person.call(this,name,age);
     this.klass = klass;
