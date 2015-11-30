@@ -26,8 +26,10 @@ describe("Person", function(){
 });
 
 describe('Student',function(){
-    it('acccept name,age as parameters',function(){
+    before(function(){
         var klass = new Klass(2);
+    })
+    it('acccept name,age as parameters',function(){
         var student = new Student(1,'jim',12,klass);
         expect(student.id).to.equal(1);
         expect(student.name).to.equal('jim');
@@ -35,7 +37,6 @@ describe('Student',function(){
         expect(student.klass.number).to.equal(2);
     });
     it('overwrite person introduce ,introduce a student with id,name,age and class',function(){
-        var klass = new Klass(2);
         var student = new Student(1,'jim',12,klass);
         klass.assignLeader(student);
         var introduce = student.introduce();
